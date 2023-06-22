@@ -66,7 +66,7 @@ async def add_location_to_each(records_session: list[Dict]) -> pd.DataFrame:
 
 
 async def main():
-    data_virtual_session = load_data_from("Listado_de_participantes_reto_1.csv", './data')
+    data_virtual_session = load_data_from("Listado_de_participantes_reto_1.csv", 'data')
     data_virtual_session = clean_data(data_virtual_session)
     records_session = data_virtual_session.to_dict(orient="records")
     new_dataframe = await add_location_to_each(records_session)
