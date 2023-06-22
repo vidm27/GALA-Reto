@@ -12,7 +12,9 @@ class RateLimitedException(Exception):
 
 
 def load_data_from(filename: str, path: str) -> pd.DataFrame:
-    current_path = Path(path) / filename
+    base_path = Path(__file__).resolve().parent
+    directory = base_path / path
+    current_path = directory / filename
     data_file = pd.read_csv(current_path)
     return data_file
 
